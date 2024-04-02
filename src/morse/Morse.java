@@ -124,7 +124,135 @@ public class Morse {
         return encriptado;
     }
 
+    public static String descriptar(String mensagemMorse) {
+        StringBuilder descriptado = new StringBuilder();
+        String[] palavras = mensagemMorse.split(" / ");
+
+        for (String palavra : palavras) {
+            String[] letras = palavra.trim().split(" ");
+            for (String letra : letras) {
+                switch (letra) {
+                    case ".-":
+                        descriptado.append("A");
+                        break;
+                    case "-...":
+                        descriptado.append("B");
+                        break;
+                    case "-.-.":
+                        descriptado.append("C");
+                        break;
+                    case "-..":
+                        descriptado.append("D");
+                        break;
+                    case ".":
+                        descriptado.append("E");
+                        break;
+                    case "..-.":
+                        descriptado.append("F");
+                        break;
+                    case "--.":
+                        descriptado.append("G");
+                        break;
+                    case "....":
+                        descriptado.append("H");
+                        break;
+                    case "..":
+                        descriptado.append("I");
+                        break;
+                    case ".---":
+                        descriptado.append("J");
+                        break;
+                    case "-.-":
+                        descriptado.append("K");
+                        break;
+                    case ".-..":
+                        descriptado.append("L");
+                        break;
+                    case "--":
+                        descriptado.append("M");
+                        break;
+                    case "-.":
+                        descriptado.append("N");
+                        break;
+                    case "---":
+                        descriptado.append("O");
+                        break;
+                    case ".--.":
+                        descriptado.append("P");
+                        break;
+                    case "--.-":
+                        descriptado.append("Q");
+                        break;
+                    case ".-.":
+                        descriptado.append("R");
+                        break;
+                    case "...":
+                        descriptado.append("S");
+                        break;
+                    case "-":
+                        descriptado.append("T");
+                        break;
+                    case "..-":
+                        descriptado.append("U");
+                        break;
+                    case "...-":
+                        descriptado.append("V");
+                        break;
+                    case ".--":
+                        descriptado.append("W");
+                        break;
+                    case "-..-":
+                        descriptado.append("X");
+                        break;
+                    case "-.--":
+                        descriptado.append("Y");
+                        break;
+                    case "--..":
+                        descriptado.append("Z");
+                        break;
+                    case "-----":
+                        descriptado.append("0");
+                        break;
+                    case ".----":
+                        descriptado.append("1");
+                        break;
+                    case "..---":
+                        descriptado.append("2");
+                        break;
+                    case "...--":
+                        descriptado.append("3");
+                        break;
+                    case "....-":
+                        descriptado.append("4");
+                        break;
+                    case ".....":
+                        descriptado.append("5");
+                        break;
+                    case "-....":
+                        descriptado.append("6");
+                        break;
+                    case "--...":
+                        descriptado.append("7");
+                        break;
+                    case "---..":
+                        descriptado.append("8");
+                        break;
+                    case "----.":
+                        descriptado.append("9");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            descriptado.append(" ");
+        }
+
+        return descriptado.toString().trim();
+    }
+
+
     public static void main(String[] args) {
         System.out.println(morseEncriptar("ola tudo bem"));
+       System.out.println(descriptar("--- .-.. .-  / - ..- -.. ---  / -... . -- "));
     }
 }
